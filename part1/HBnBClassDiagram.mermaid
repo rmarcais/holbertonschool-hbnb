@@ -38,10 +38,10 @@ classDiagram
     BaseModel <|-- Place
     BaseModel <|-- Amenity
     BaseModel <|-- Review
-    User "1" *-- "0..*" Place
-    User "1" *-- "0..*" Review
-    Place "1" *-- "0..*" Review
-    Place "1" --> "0..*" PlaceAmenity
-    Amenity "1" --> "0..*" PlaceAmenity
+    User "1" *-- "0..*" Place : creates
+    User "1" *-- "0..*" Review : writes
+    Place "1" *-- "0..*" Review : receives
+    Place "1" --> "0..*" PlaceAmenity : has
+    Amenity "1" --> "0..*" PlaceAmenity : is part of
 
    
