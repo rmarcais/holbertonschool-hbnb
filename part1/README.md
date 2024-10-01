@@ -39,7 +39,7 @@ The HBnB Evolution platform will enable users to register, manage profiles, crea
         - Database Access:
             - **DBStorage**: Handles creating, reading, updating, and deleting data.
 
-**Role of the Facade Pattern :**
+#### Role of the Facade Pattern :
 
 The HBnBFacade simplifies communication between the presentation and business logic layers. It provides a single point of access for controllers, making it easier to perform operations without needing to know the details of how they work. This helps:
 
