@@ -12,6 +12,12 @@ The HBnB Evolution platform will enable users to register, manage profiles, crea
 <img src="./task0/High-Level Package Diagram.drawio.png" alt="HBnB Package Diagram"/>
 </p>
 
+#### Purpose of the Diagram:
+
+The package diagram provides a high-level view of how the HBnB Evolution application is structured, showing the interactions between the different layers of the system.
+It clarifies how responsibilities are distributed among the Presentation, Business Logic, and Persistence layers, and how components like controllers, models, and storage systems collaborate to manage API requests and data handling.
+This diagram helps developers understand the system architecture and guides the implementation of features in each layer.
+
 #### Layer Descriptions
 - **Presentation Layer:**
 
