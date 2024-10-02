@@ -138,7 +138,7 @@ This diagram defines the structural backbone for user actions, property manageme
 - API validates and forwards the request to Business Logic.
 - Business Logic checks the Database for existing users.
 - If no user exists, it hashes the password and saves the user in the Database.
-- Database confirms, and the API returns a success (200) or failure (400/409) response.
+- Database confirms, and the API returns a success (201) or failure (400/409) response.
 
 Each layer collaborates to securely process the registration request.
 
@@ -159,7 +159,7 @@ sequenceDiagram
         Database -->> Business Logic: Confirm save
     end
     Business Logic -->> API: Return response
-    API -->> User: Return Success (200) / Failure (400/409)
+    API -->> User: Return Success (201) / Failure (400/409)
 ```
 
 #### API Call: Place Creation
@@ -172,7 +172,7 @@ sequenceDiagram
 - API validates and forwards the request to Business Logic.
 - Business Logic saves the place in the Database.
 - It then associates the relevant amenities with the place.
-- Database confirms the save, and the API returns a success (200) or failure (400) response.
+- Database confirms the save, and the API returns a success (201) or failure (400) response.
 
 This ensures the place and its amenities are securely stored and linked.
 
@@ -189,7 +189,7 @@ sequenceDiagram
     Business Logic ->> Database: add_amenities() : Associate amenities with the new place (INSERT)
     Database -->> Business Logic: Confirm save
     Business Logic -->> API: Return response
-    API -->> User: Return Success (200) / Failure (400)
+    API -->> User: Return Success (201) / Failure (400)
 ```
 
 #### API Call: Review Submission
@@ -202,7 +202,7 @@ sequenceDiagram
 - API validates the data and forwards the request to Business Logic.
 - Business Logic checks if the place exists in the Database.
 - If the place exists, Business Logic saves the review in the Database.
-- Database confirms the save, and the API returns a success (200) or failure (400) response.
+- Database confirms the save, and the API returns a success (201) or failure (400) response.
 
 This process ensures that reviews are linked to valid places and are securely stored.
 
@@ -222,7 +222,7 @@ sequenceDiagram
         Database -->> Business Logic: Confirm save
     end
     Business Logic -->> API: Return response
-    API -->> User: Return Success (200) / Failure (400)
+    API -->> User: Return Success (201) / Failure (400)
 ```
 
 #### API Call: Fetching a List of Places

@@ -10,5 +10,5 @@ sequenceDiagram
     Business Logic ->> Database: add_amenities() : Associate amenities with the new place (INSERT)
     Database -->> Business Logic: Confirm save
     Business Logic -->> API: Return response
-    API -->> User: Return Success (200) / Failure (400)
+    API -->> User: Return Success (201) / Failure (400)
 
