@@ -15,9 +15,8 @@ class Amenity(BaseModel):
     
     @name.setter
     def name(self, value):
-        # (User existance is validated in the facade)
         if not isinstance(value, str):
-            raise ValueError("name must be a Place instance !")
+            raise ValueError("name must be a string !")
         if len(value) > 50:
             raise ValueError("Name must not exceed 50 characters !")
         self._name = value
