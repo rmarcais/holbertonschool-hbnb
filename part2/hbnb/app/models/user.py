@@ -24,8 +24,8 @@ class User(BaseModel):
     def first_name(self, value):
         if not isinstance(value, str):
             raise ValueError("First name must be a string !")
-        if len(value) > 50:
-            raise ValueError("First name must not exceed 50 characters !")
+        if len(value) > 50 or len(value) <= 0:
+            raise ValueError("First name must not be empty and must not exceed 50 characters !")
         self._first_name = value
 
     @property
@@ -36,8 +36,8 @@ class User(BaseModel):
     def last_name(self, value):
         if not isinstance(value, str):
             raise ValueError("Last name must be a string !")
-        if len(value) > 50:
-            raise ValueError("Last name must not exceed 50 characters !")
+        if len(value) > 50 or len(value) <= 0:
+            raise ValueError("Last name must not be empty and must not exceed 50 characters !")
         self._last_name = value
 
     @property

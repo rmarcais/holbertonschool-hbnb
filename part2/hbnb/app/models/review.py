@@ -21,8 +21,8 @@ class Review(BaseModel):
     def text(self, value):
         if not isinstance(value, str):
             raise ValueError("text must be a string !")
-        if len(value) > 1000:
-            raise ValueError("Text must not exceed 1000 characters !")
+        if len(value) > 1000 or len(value) <= 0:
+            raise ValueError("Text must not be empty and must not exceed 1000 characters !")
         self._text = value
 
     @property

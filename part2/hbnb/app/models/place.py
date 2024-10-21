@@ -26,8 +26,8 @@ class Place(BaseModel):
     def title(self, value):
         if not isinstance(value, str):
             raise ValueError("Title must be a string !")
-        if len(value) > 50:
-            raise ValueError("Title must not exceed 100 characters !")
+        if len(value) > 50 or len(value) <= 0:
+            raise ValueError("Title must not be empty and must not exceed 100 characters !")
         self._title = value
     
     @property
