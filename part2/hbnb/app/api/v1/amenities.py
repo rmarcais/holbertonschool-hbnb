@@ -18,6 +18,10 @@ class AmenityList(Resource):
         """Register a new amenity"""
         amenity_data = api.payload
 
+        existing_amenity = facade.get_amenity_by_name(amenity_data.get("name"))
+        if existing_amenity:
+            return {'error': 'Amenity already exists'}, 400
+
         try:
             new_amenity = facade.create_amenity(amenity_data)
         except ValueError as err:
