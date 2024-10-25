@@ -62,3 +62,8 @@ class User(BaseModel):
         """Add a new place to the user"""
         # (The existance of the place is validated in the facade)
         self.places.append(place)
+
+    def add_review(self, review):
+        """Add a new review to the user"""
+        # (The existance of the review is validated in the facade)
+        self.reviews.append(review)
