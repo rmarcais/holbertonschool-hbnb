@@ -4,7 +4,7 @@ from .user import User
 
 class Place(BaseModel):
 
-    def __init__(self, title, description, price, latitude, longitude, owner):
+    def __init__(self, title, description, price, latitude, longitude, owner, amenities):
         if title is None or price is None or latitude is None \
             or longitude is None or owner is None:
             raise ValueError("Missing required fields !")
@@ -16,7 +16,7 @@ class Place(BaseModel):
         self.longitude = longitude
         self.owner = owner
         self.reviews = []  # List to store related reviews
-        self.amenities = []  # List to store related amenities
+        self.amenities = amenities  # List to store related amenities
 
     @property
     def title(self):
@@ -98,4 +98,5 @@ class Place(BaseModel):
     def add_amenity(self, amenity):
         """Add an amenity to the place."""
         # (The existance of the amenity is validated in the facade)
-        self.amenities.append(amenity)
+        if amenity not in self.amenities:
+            self.amenities.append(amenity)
